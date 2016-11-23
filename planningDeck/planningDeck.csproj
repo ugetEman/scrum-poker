@@ -70,6 +70,7 @@
     <Content Include="Images\navbar-logo-medium.png" />
     <Content Include="Scripts\application.js" />
     <Content Include="Index.html" />
+    <Content Include="Scripts\T-shirt.js" />
     <Content Include="Styles\main.css" />
     <Content Include="Web.config" />
   </ItemGroup>
