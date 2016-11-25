@@ -1,73 +1,4 @@
-﻿/*body {
-    height: 100%;
-    background: #dee1e2;
-    color: #1d1c1b;
-    margin: 0;
-}
-
-@font-face {
-    font-family: 'chasFont';
-    src: url('../Fonts/DINWeb-CondBold.woff');
-}
-
-h1 {
-    font-size: 1.5em;
-    margin: 0.67em 0;
-}
-
-
-
-.headerlogo {
-    position: absolute;
-    bottom: 20px;
-    background: transparent url('../Images/navbar-logo-medium.png') left center no-repeat;
-    height: 50px;
-    width: 100%;
-}
-
-
-.nav-inner {
-    max-width: 1200px;
-    margin: auto;
-    height: 100%;
-    min-height: 50px;
-}
-
-nav {
-    background: #dee1e2;
-    box-shadow: 0px 2px 24px rgba(0,0,28,0.6);
-    z-index: 1100;
-    position: fixed;
-    width: 100%;
-}
-
-    nav ul {
-        list-style: none;
-        padding: 0px;
-        float: right;
-    }
-
-        nav ul li {
-            display: inline-block;
-            float: left;
-        }
-
-            nav ul li a {
-                text-decoration: none;
-                color: #24a2b5;
-                line-height: 60px;
-            }
-
-.navlink {
-    margin-right: 50px;
-    font-size: 20px;
-    font-family: "chasFont", "Helvetica", "Arial", sans-serif;
-    text-transform: uppercase;
-}
-
-    .navlink.active {
-    }*/
-
+﻿
 body {
     height: 100%;
     background: #dee1e2;
@@ -184,7 +115,6 @@ nav {
 
 .setting-box {
     display: inline-block;
-    /*background: #2b3a3a url('../Images/dark-grunge-texture@2x.png');*/
     text-align: center;
     width: 450px;
     height: 550px;
@@ -258,6 +188,21 @@ nav {
 
 .btn, .btn:hover {
     text-decoration: none;
+}
+
+ /*black overly to setting box in mobile view*/
+.black_overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
 }
 
 
@@ -359,7 +304,7 @@ div {
 
 
 
-    /*///////////////////////////////////////
+/*///////////////////////////////////////
      ///////////////////////////////////////
      ///////////////////////////////////////*/
 
@@ -402,9 +347,10 @@ div {
         margin-left: 20px,;
         margin-top: 60px;
     }
-        .row div {           
-            height: 100px;
-        }
+
+    .row div {
+        height: 100px;
+    }
 
     div.card-small {
         width: 100px;
@@ -421,13 +367,68 @@ div {
 
     .setting-box {
         display: none;
-        clear: both;
-        float: left;
-        margin: 10px auto 5px 20px;
-        width: 28%;
-        display: none;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+        padding: 16px;
+        border: 16px solid  #dee1e2;
+        box-shadow: inset 5px 5px 10px 0px black;
+        background-color: white;
+        z-index: 1002;
     }
-     
+
+        .setting-box h2 {
+            width: 30%;
+            margin: 1px,auto,10px;
+            font-family: chasFont;
+            color: black;
+        }
+
+    .setting-button-container {
+        width: 200px;
+        height: 150px;
+        background: #2b3a3a url('../Images/dark-grunge-texture@2x.png');
+        margin-left: 40px;
+        padding:10px;
+    }
+
+    .card-color-container {
+        width: 150px;
+        height: 20px;
+        margin-left: 40px;
+    }
+
+        .card-color-container input[type="submit"] {
+            font-size: 1em;
+            width: 30px;
+            padding-bottom: 1em;
+        }
+
+        .card-color-container div {
+            display: inline-block;
+        }
+
+    .btn {
+        font-family: chasFont, "Helvetica", "Arial", sans-serif;
+        font-size: 1em;
+        width: 150px;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+        border-radius: 3px;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+        background-position: top left;
+    }
+
+    .setting-button-container div {
+        padding: 0;
+        padding-right: 1em;
+        padding-bottom: 0;
+        margin-top: .5em;
+    }
+    div#light.setting-box{
+        left:80px;
+    }
 }
 
 /*///////////////////////////////////////
@@ -437,7 +438,7 @@ div {
 /* When the screen is less than 600 pixels wide, hide all list items. 
     Show the list item that contains the link to open and close the topnav  */
 
-@media  screen and (max-width : 480px) {
+@media screen and (max-width : 480px) {
     nav {
         border-bottom: 0;
     }
@@ -468,7 +469,7 @@ div {
     .card-large {
         width: 300px;
         margin-left: 0;
-        height:90px;
+        height: 90px;
     }
 
     .row div {
@@ -477,6 +478,13 @@ div {
 
     section.content-wrapper {
         margin-right: 0;
+    }
+
+    .setting-button-container {
+        width: 150px;
+        height: 150px;
+        /*background: #2b3a3a url('../Images/dark-grunge-texture@2x.png');*/
+        margin-left: 40px;
     }
 }
 
@@ -502,7 +510,10 @@ div {
         width: 280px;
         margin-left: 0;
     }
-     .row div {
+
+    .row div {
         height: 90px;
     }
 }
+/*/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////*/

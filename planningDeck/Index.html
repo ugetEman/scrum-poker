@@ -5,36 +5,16 @@
     <link href="Styles/main.css" rel="stylesheet" />
 
     <link href="Styles/mediaQueries.css" rel="stylesheet" />
-   <!-- This meta viewport tag is required for the page to scale properly inside any screen size, particularly in the mobile viewport.-->
+
+    <!-- This meta viewport tag is required for the page to scale properly inside any screen size, particularly in the mobile viewport.-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta charset="utf-8" />
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script>
-        $(function () {
-            var pull = $('#pull');
-            menu = $('nav ul');
-            menuHeight = menu.height();
-
-            $(pull).on('click', function (e) {
-                e.preventDefault();
-                menu.slideToggle();
-            });
-        });
-
-        $(window).resize(function () {
-            var w = $(window).width();
-            if (w > 320 && menu.is(':hidden')) {
-                menu.removeAttr('style');
-            }
-        });
-    </script>
-
+    
 </head>
 <body>
-
-    
 
     <header>
         <nav class="clearfix">
@@ -46,18 +26,20 @@
                 <li><a class="navlink" href="press.html">PRESS</a></li>
                 <li><a class="navlink" href="job.html">JOBB</a></li>
                 <li><a class="navlink" href="contact.html">KONTAKT</a></li>
+                <li><a class="navlink" id="openDialogBox" media="media screen and (max-width: 600px)" href="javascript:void(0)">Settings</a></li>
+
             </ul>
             <!--This  link will be used to pull the menu navigation when it is hidden in a small screen.-->
             <a href="#" id="pull">&#9776</a>
         </nav>
-        
+
     </header>
     <section class="section-title">
         <h1 class="section-title-textbox"> <strong> Chas Planning Poker</strong></h1>
     </section>
 
     <section class="content-wrapper">
-        <!--Fibonacci Sequence--> 
+
         <div class="card-container">
             <div id='card-small-grid'>
                 <div id="card-table">
@@ -150,13 +132,13 @@
             </div>
         </div>
 
-       
 
-        <div class=" setting-box">
+
+        <div id="light" class=" setting-box">
             <h2>Setting</h2>
             <div class="setting-button-container">
                 <div>
-                    <input class="btn" id="default" type="submit" value="planning poker R"/>
+                    <input class="btn" id="default" type="submit" value="planning poker R" />
                 </div>
                 <div>
                     <input class="btn" id="fibonacci" type="submit" value="Fibonacci sequence" />
@@ -174,16 +156,23 @@
                     <input class="btn" id="redColor" type="submit" value="" style="background: #ff6a00;" />
                 </div>
                 <div>
-                    <input class="btn" id="blueColor"  type="submit" value="" style="background: #0094ff;" />
+                    <input class="btn" id="blueColor" type="submit" value="" style="background: #0094ff;" />
                 </div>
                 <div>
                     <input class="btn" id="greenColor" type="submit" value="" style="background: #35960c;" />
                 </div>
                 <div>
-                    <input class="btn" id="greyColor" type="submit" value="" style="background: #999;" /> 
+                    <input class="btn" id="greyColor" type="submit" value="" style="background: #999;" />
                 </div>
+                <div>
+                    <a  id="closeDialogBox" href="" >Close</a>
+                </div>
+
             </div>
+            
+
         </div>
+        <div id="fade" class="black_overlay"></div>
 
     </section>
 

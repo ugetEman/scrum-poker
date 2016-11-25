@@ -1,7 +1,12 @@
-﻿var module = (function (a, b) {
+﻿
+
+var module = (function (a, b) {
 
     var listSmallCard = document.getElementsByClassName('card-small');
 
+    /* -------------------------------------------------------------------
+******** Selecting and flipping cards. *******
+----------------------------------------------------------------------*/
     var cardShow = function () {
         return this.className === "card-small" ?
             (d = this.getAttribute("data-target"), e.style.display = "none", f.style.display = "block")
@@ -13,6 +18,7 @@
         g[h].onclick = cardShow
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // default card
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var planningPoker = document.getElementById('default');
     planningPoker.onclick = function () {
@@ -53,6 +59,7 @@
 
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // fibonacci sequence
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var fibonacciSequence = document.getElementById('fibonacci');
     fibonacciSequence.onclick = function () {
@@ -92,6 +99,7 @@
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // natural sequence
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var naturalSequence = document.getElementById('natural');
     naturalSequence.onclick = function () {
@@ -131,6 +139,7 @@
     };
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // tShirt
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var tShirt = document.getElementById('tShirt');
     tShirt.onclick = function () {
@@ -161,7 +170,9 @@
         listLargeCard[9].getElementsByTagName('span')[0].innerText = '∞';
     };
 
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Color setting
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var red = document.getElementById('redColor');
     red.onclick = function () {
@@ -202,7 +213,48 @@
         }
 
     };
-   
+    /* -------------------------------------------------------------------
+******** jquery function to open the setting box. *******
+----------------------------------------------------------------------*/
+    // 
+    $("a").click(function () {
+        if ($(this).attr("id") == "openDialogBox") {
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+        }
+    });
+    /* -------------------------------------------------------------------
+  ******** jquery function to close the setting box. *******
+  ----------------------------------------------------------------------*/
+    // 
+    $("a").click(function () {
+        if ($(this).attr("id") == "closeDialogBox") {
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        }
+    });
+
+    /* -------------------------------------------------------------------
+    ******** To hide and show the navigation based on screen size *******
+   ----------------------------------------------------------------------*/
+    //
+    $(function () {
+        var pull = $('#pull');
+        menu = $('nav ul');
+
+        $(pull).on('mouseover', function (e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+    });
+
+    $(window).resize(function () {
+        var w = $(window).width();
+        if (w > 320 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+        }
+    });
+
 
 
 })(this.document)
