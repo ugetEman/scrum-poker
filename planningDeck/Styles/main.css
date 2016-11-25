@@ -1,8 +1,8 @@
-﻿body {
+﻿/*body {
     height: 100%;
     background: #dee1e2;
     color: #1d1c1b;
-    margin:0;
+    margin: 0;
 }
 
 @font-face {
@@ -44,11 +44,12 @@ nav {
     nav ul {
         list-style: none;
         padding: 0px;
+        float: right;
     }
 
         nav ul li {
             display: inline-block;
-            float: right;
+            float: left;
         }
 
             nav ul li a {
@@ -65,9 +66,93 @@ nav {
 }
 
     .navlink.active {
+    }*/
+
+body {
+    height: 100%;
+    background: #dee1e2;
+    color: #1d1c1b;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'chasFont';
+    src: url('../Fonts/DINWeb-CondBold.woff');
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0.67em 0;
+}
+
+nav {
+    width: 100%;
+    background: #dee1e2;
+    position: fixed;
+    box-shadow: 0px 2px 24px rgba(0,0,28,0.6);
+    z-index: 1100;
+}
+
+    nav ul {
+        padding: 0;
+        margin: 0 auto;
+        width: 1200px;
+        height: 40px;
+        /*float:right   ;*/
     }
 
-.section--title {
+    nav li {
+        display: inline;
+        float: left;
+    }
+
+    nav a {
+        color: #fff;
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        text-decoration: none;
+        line-height: 40px;
+        /*text-shadow: 1px 1px 0px #283744;*/
+    }
+
+    nav li a {
+        box-sizing: border-box;
+        text-decoration: none;
+        color: #24a2b5;
+        line-height: 60px;
+        margin-right: 50px;
+        font-size: 20px;
+        font-family: "chasFont", "Helvetica", "Arial", sans-serif;
+        text-transform: uppercase;
+    }
+
+    nav a:hover, nav a:active {
+        background-color: #8c99a4;
+    }
+
+    nav a#pull {
+        display: none;
+    }
+
+    nav li:last-child a {
+        border-right: 0;
+    }
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.section-title {
     font-size: 30px;
     padding: 36px 0;
     background: #367294;
@@ -87,17 +172,16 @@ nav {
     max-width: 1200px;
     /*background-image: url(http://placehold.it/1200x1000);*/
     margin: 0 auto;
-   
 }
 
 .card-container {
     display: inline-block;
     width: 570px;
     height: 600px;
-    margin:10px;
+    margin: 10px;
     margin-top: -30px;
-    
 }
+
 .setting-box {
     display: inline-block;
     /*background: #2b3a3a url('../Images/dark-grunge-texture@2x.png');*/
@@ -108,58 +192,53 @@ nav {
     box-shadow: inset 5px 5px 10px 0px black;
     padding-top: 4%;
     margin: 0 10px 0 10px;
-    float:right;
-    border-radius:50px;
+    float: right;
+    border-radius: 50px;
 }
-.setting-box h2{
-    width:75%;
-    margin: 20px,auto,10px;
-    font-family:chasFont;
-    color:black;
-}
-.setting-button-container{
-    width:350px;
-    height:350px;
-    background: #2b3a3a url('../Images/dark-grunge-texture@2x.png');
-    margin-left:40px;
-}  
-.card-color-container{
-    width:300px;
-    height:60px;
-    /*background-color:black;*/
-    margin-left:65px;
-} 
 
-/*.card-color-container .btn{
-    font-size: 1em;
-    width:70px;
-    padding-bottom:2em;
-}*/
-.card-color-container input[type="submit"]{    
-    font-size: 1em;
-    width:70px;
-    padding-bottom:2em;
+    .setting-box h2 {
+        width: 75%;
+        margin: 20px,auto,10px;
+        font-family: chasFont;
+        color: black;
+    }
+
+.setting-button-container {
+    width: 350px;
+    height: 350px;
+    background: #2b3a3a url('../Images/dark-grunge-texture@2x.png');
+    margin-left: 40px;
 }
-.card-color-container div{
-    display:inline-block;
+
+.card-color-container {
+    width: 300px;
+    height: 60px;
+    margin-left: 65px;
 }
+
+    .card-color-container input[type="submit"] {
+        font-size: 1em;
+        width: 70px;
+        padding-bottom: 2em;
+    }
+
+    .card-color-container div {
+        display: inline-block;
+    }
+
 .footer {
-    height:50px;
-    margin-bottom:30px;
+    height: 50px;
+    margin-bottom: 30px;
     border-bottom: 1px solid #17191a;
     background-repeat: repeat;
     background-position: top left;
-    background-image: url('../Images/dark-grunge-texture@2x.png'), 
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%,
-     rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 82%,
-     rgba(255, 255, 255, 0.06) 94%, rgba(255, 255, 255, 0) 100%), linear-gradient(to bottom, #525252 0%, #0c0c0c 100%);
-    
+    background-image: url('../Images/dark-grunge-texture@2x.png'), linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 82%, rgba(255, 255, 255, 0.06) 94%, rgba(255, 255, 255, 0) 100%), linear-gradient(to bottom, #525252 0%, #0c0c0c 100%);
 }
 
 .btn {
     font-family: chasFont, "Helvetica", "Arial", sans-serif;
     font-size: 2em;
-    width:250px;
+    width: 250px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
     border-radius: 3px;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 1px 3px 1px rgba(0, 0, 0, 0.4);
@@ -168,13 +247,15 @@ nav {
     background-image: -webkit-linear-gradient( rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.28) 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 100%), url(../img/ui/textures/dark-grunge-texture-.35.png), -webkit-linear-gradient( #d6c2c2, #bb9999);
     background-image: linear-gradient( rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.28) 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 100%), url(../img/ui/textures/dark-grunge-texture-.35.png), linear-gradient( #d6c2c2, #bb9999);
 }
-.setting-button-container div{
+
+.setting-button-container div {
     padding-top: 2em;
     padding-right: 4em;
     padding-bottom: 0;
     padding-left: 4em;
     margin-top: .5em;
 }
+
 .btn, .btn:hover {
     text-decoration: none;
 }
@@ -189,14 +270,10 @@ div {
 }
 
 .card-small {
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     border-radius: 15px;
     background: #fff;
     color: #222;
-    font: bold 60px/80px Arial,sans-serif;
+    font: bold 60px/80px chasFont,sans-serif;
     margin: 0 auto;
     padding: 4px;
     text-align: center;
@@ -209,14 +286,10 @@ div {
         background-color: #999;
         border: 1px solid #666;
         display: block;
-        height:100%;
+        height: 100%;
     }
 
 .card-large {
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     border-radius: 15px;
     /*background: #fff;*/
     display: none;
@@ -228,27 +301,17 @@ div {
 }
 
     .card-large span {
-        -webkit-border-radius: 13px;
-        -moz-border-radius: 13px;
-        -ms-border-radius: 13px;
-        -o-border-radius: 13px;
         border-radius: 13px;
         background-color: #369;
         background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwOTljYyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMzM2NiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
         background-size: 100%;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0099cc), color-stop(100%, #003366));
-        background-image: -webkit-linear-gradient(#0099cc,#003366);
-        background-image: -moz-linear-gradient(#0099cc,#003366);
-        background-image: -o-linear-gradient(#0099cc,#003366);
-        background-image: -ms-linear-gradient(#0099cc,#003366);
-        background-image: linear-gradient(#0099cc,#003366);
         border: 2px solid #036;
         color: #fff;
         display: block;
         text-shadow: #000 0 2px 2px;
         overflow: hidden;
         height: 470px;
-        margin-top:60px;
+        margin-top: 60px;
     }
 
 #card-large-13, #card-large-20, #card-large-40 {
@@ -268,33 +331,178 @@ div {
         background-color: #090;
         background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwY2MwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwNjYwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
         background-size: 100%;
-        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00cc00), color-stop(100%, #006600));
-        background-image: -webkit-linear-gradient(#00cc00,#006600);
-        background-image: -moz-linear-gradient(#00cc00,#006600);
-        background-image: -o-linear-gradient(#00cc00,#006600);
-        background-image: -ms-linear-gradient(#00cc00,#006600);
-        background-image: linear-gradient(#00cc00,#006600);
         border-color: #060;
     }
+
+/*///////////////////////////////////////
+     ///////////////////////////////////////
+     ///////////////////////////////////////*/
+#card-table {
+    width: 100%;
+    height: 100%;
+    margin-left: 40px,;
+    margin-top: 60px;
+}
+
+.row {
+    width: 100%;
+    float: left;
+}
+
+    .row div {
+        width: 30%;
+        margin: 3px;
+        height: 120px;
+        /*background:grey;*/
+        float: left;
+    }
+
+
 
     /*///////////////////////////////////////
      ///////////////////////////////////////
      ///////////////////////////////////////*/
-  #card-table {
-    width: 100%;
-    height:100%;
-    margin-left:60px,;
-    margin-top:60px;
 
+/* When the screen is less than 600 pixels wide, hide all list items. 
+    Show the list item that contains the link to open and close the topnav  */
+
+@media screen and (max-width: 600px) {
+
+    nav {
+        height: auto;
+    }
+
+        nav ul {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        nav li {
+            width: 50%;
+            float: left;
+            position: relative;
+        }
+
+            nav li a {
+                border-bottom: 1px solid #576979;
+                border-right: 1px solid #576979;
+            }
+
+        nav a {
+            text-align: left;
+            width: 100%;
+            text-indent: 25px;
+        }
+
+
+    #card-table {
+        width: 100%;
+        height: 100%;
+        margin-left: 20px,;
+        margin-top: 60px;
+    }
+        .row div {           
+            height: 100px;
+        }
+
+    div.card-small {
+        width: 100px;
+    }
+
+    div.card-container {
+        width: 400px;
+    }
+
+    section.content-wrapper {
+        width: 400px;
+    }
+
+
+    .setting-box {
+        display: none;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+    }
+     
 }
-.row{   
-    width:80%; 
-    float:left;
+
+/*///////////////////////////////////////
+     ///////////////////////////////////////
+     ///////////////////////////////////////*/
+
+/* When the screen is less than 600 pixels wide, hide all list items. 
+    Show the list item that contains the link to open and close the topnav  */
+
+@media  screen and (max-width : 480px) {
+    nav {
+        border-bottom: 0;
+    }
+
+        nav ul {
+            display: none;
+            height: auto;
+        }
+
+        nav a#pull {
+            display: block;
+            background-color: #283744;
+            width: 100%;
+            position: relative;
+        }
+
+            nav a#pull:after {
+                content: "";
+                background: url('nav-icon.png') no-repeat;
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                position: absolute;
+                right: 15px;
+                top: 10px;
+            }
+
+    .card-large {
+        width: 300px;
+        margin-left: 0;
+        height:90px;
+    }
+
+    .row div {
+        height: 90px;
+    }
+
+    section.content-wrapper {
+        margin-right: 0;
+    }
 }
-.row div{
-    width:30%  ;
-    margin:3px;
-    height:120px;
-    /*background:grey;*/
-    float:left;
+
+/*///////////////////////////////////////
+     ///////////////////////////////////////
+     ///////////////////////////////////////*/
+
+/* When the screen is less than 600 pixels wide, hide all list items. 
+    Show the list item that contains the link to open and close the topnav  */
+
+@media screen and (max-width : 320px) {
+    nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+
+        nav li a {
+            border-bottom: 1px solid #576979;
+        }
+
+    .card-large {
+        width: 280px;
+        margin-left: 0;
+    }
+     .row div {
+        height: 90px;
+    }
 }
