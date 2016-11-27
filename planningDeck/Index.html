@@ -2,17 +2,14 @@
 <html>
 <head>
     <title>Scrum Poker</title>
-    <link href="Styles/main.css" rel="stylesheet" />
-
-    <link href="Styles/mediaQueries.css" rel="stylesheet" />
 
     <!-- This meta viewport tag is required for the page to scale properly inside any screen size, particularly in the mobile viewport.-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <link href="Styles/master.css" rel="stylesheet" />
     <meta charset="utf-8" />
 
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    
+
 </head>
 <body>
 
@@ -26,7 +23,7 @@
                 <li><a class="navlink" href="press.html">PRESS</a></li>
                 <li><a class="navlink" href="job.html">JOBB</a></li>
                 <li><a class="navlink" href="contact.html">KONTAKT</a></li>
-                <li><a class="navlink" id="openDialogBox" media="media screen and (max-width: 600px)" href="javascript:void(0)">Settings</a></li>
+                <li><a class="navlink" id="openDialogBox" href="javascript:void(0)">Setting</a></li>
 
             </ul>
             <!--This  link will be used to pull the menu navigation when it is hidden in a small screen.-->
@@ -150,37 +147,35 @@
                     <input class="btn" id="tShirt" type="submit" value="T-Shirt" />
                 </div>
             </div>
+
             <h2>Card Background</h2>
             <div class="card-color-container">
                 <div>
-                    <input class="btn" id="redColor" type="submit" value="" style="background: #ff6a00;" />
+                    <input class="btn" id="#ff6a00" type="submit" value="" style="background: #ff6a00;" />
                 </div>
                 <div>
-                    <input class="btn" id="blueColor" type="submit" value="" style="background: #0094ff;" />
+                    <input class="btn" id="#0094ff" type="submit" value="" style="background: #0094ff;" />
                 </div>
                 <div>
-                    <input class="btn" id="greenColor" type="submit" value="" style="background: #35960c;" />
+                    <input class="btn" id="#35960c" type="submit" value="" style="background: #35960c;" />
                 </div>
                 <div>
-                    <input class="btn" id="greyColor" type="submit" value="" style="background: #999;" />
+                    <input class="btn" id="#999" type="submit" value="" style="background: #999;" />
                 </div>
                 <div>
-                    <a  id="closeDialogBox" href="" >Close</a>
+                    <a id="closeDialogBox" href="">Close</a>
                 </div>
 
             </div>
-            
+
 
         </div>
         <div id="fade" class="black_overlay"></div>
 
     </section>
 
-    <section class="footer">
-        some info on footer
-    </section>
+    <section class="footer"></section>
 
     <script src="Scripts/application.js"></script>
-    <script src="Scripts/T-shirt.js"></script>
 </body>
 </html>

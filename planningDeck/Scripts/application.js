@@ -1,7 +1,7 @@
 ﻿
 
 var module = (function (a, b) {
-
+    // this variable is used in more than one function
     var listSmallCard = document.getElementsByClassName('card-small');
 
     /* -------------------------------------------------------------------
@@ -17,9 +17,9 @@ var module = (function (a, b) {
     for (var d, e = a.getElementById("card-small-grid"), f = a.getElementById("card-large-voted"), g = a.getElementsByTagName("div"), h = g.length; h--;)
         g[h].onclick = cardShow
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // default card
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /* -------------------------------------------------------------------
+******** Default card *******
+----------------------------------------------------------------------*/
     var planningPoker = document.getElementById('default');
     planningPoker.onclick = function () {
 
@@ -58,9 +58,9 @@ var module = (function (a, b) {
     };
 
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // fibonacci sequence
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /* -------------------------------------------------------------------
+******** Fibonacci sequence *******
+----------------------------------------------------------------------*/
     var fibonacciSequence = document.getElementById('fibonacci');
     fibonacciSequence.onclick = function () {
 
@@ -98,9 +98,9 @@ var module = (function (a, b) {
 
     };
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // natural sequence
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /* -------------------------------------------------------------------
+******** Natural sequence *******
+----------------------------------------------------------------------*/
     var naturalSequence = document.getElementById('natural');
     naturalSequence.onclick = function () {
 
@@ -138,9 +138,9 @@ var module = (function (a, b) {
 
     };
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // tShirt
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /* -------------------------------------------------------------------
+******** T-Shirt *******
+----------------------------------------------------------------------*/
     var tShirt = document.getElementById('tShirt');
     tShirt.onclick = function () {
 
@@ -150,7 +150,7 @@ var module = (function (a, b) {
         listSmallCard[3].getElementsByTagName('span')[0].innerText = 'L';
         listSmallCard[4].getElementsByTagName('span')[0].innerText = 'XL';
         listSmallCard[5].getElementsByTagName('span')[0].innerText = '2XL';
-        listSmallCard[6].getElementsByTagName('span')[0].innerText = 'W';
+        listSmallCard[6].getElementsByTagName('span')[0].innerText = '3XL';
         listSmallCard[7].getElementsByTagName('span')[0].innerText = '?';
         listSmallCard[8].getElementsByTagName('span')[0].innerText = '∞';
         listSmallCard[9].style.display = "none";
@@ -165,83 +165,47 @@ var module = (function (a, b) {
         listLargeCard[4].getElementsByTagName('span')[0].innerText = 'L';
         listLargeCard[5].getElementsByTagName('span')[0].innerText = 'XL';
         listLargeCard[6].getElementsByTagName('span')[0].innerText = '2XL';
-        listLargeCard[7].getElementsByTagName('span')[0].innerText = 'W';
+        listLargeCard[7].getElementsByTagName('span')[0].innerText = '3XL';
         listLargeCard[8].getElementsByTagName('span')[0].innerText = '?';
         listLargeCard[9].getElementsByTagName('span')[0].innerText = '∞';
     };
 
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Color setting
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    var red = document.getElementById('redColor');
-    red.onclick = function () {
-        var listSmallCard = document.getElementsByClassName('card-small');
-
-        for (i = 0; i < listSmallCard.length; i++) {
-            document.getElementsByTagName('span')[i].style.backgroundColor = '#ff6a00';
-        }
-
-    };
-
-    var blue = document.getElementById('blueColor');
-    blue.onclick = function () {
-        var listSmallCard = document.getElementsByClassName('card-small');
-
-        for (i = 0; i < listSmallCard.length; i++) {
-            document.getElementsByTagName('span')[i].style.backgroundColor = '#0094ff';
-        }
-
-    };
-
-    var green = document.getElementById('greenColor');
-    green.onclick = function () {
-        var listSmallCard = document.getElementsByClassName('card-small');
-
-        for (i = 0; i < listSmallCard.length; i++) {
-            document.getElementsByTagName('span')[i].style.backgroundColor = '#35960c';
-        }
-    };
-
-    var grey = document.getElementById('greyColor');
-    grey.onclick = function () {
-        var listSmallCard = document.getElementsByClassName('card-small');
-
-        for (i = 0; i < listSmallCard.length; i++) {
-            document.getElementsByTagName('span')[i].style.backgroundColor = '#999';
-
-        }
-
-    };
     /* -------------------------------------------------------------------
-******** jquery function to open the setting box. *******
+******** Card background color setting *******
 ----------------------------------------------------------------------*/
-    // 
+    $(".btn").click(function () {
+        for (i = 0; i < listSmallCard.length; i++) {
+            document.getElementsByTagName('span')[i].style.backgroundColor = this.id;
+        }
+    });
+
+
+
+    /* -------------------------------------------------------------------
+******** jquery function to open and close the setting box in mobile view. *******
+----------------------------------------------------------------------*/
+
     $("a").click(function () {
         if ($(this).attr("id") == "openDialogBox") {
             document.getElementById('light').style.display = 'block';
             document.getElementById('fade').style.display = 'block';
         }
-    });
-    /* -------------------------------------------------------------------
-  ******** jquery function to close the setting box. *******
-  ----------------------------------------------------------------------*/
-    // 
-    $("a").click(function () {
         if ($(this).attr("id") == "closeDialogBox") {
             document.getElementById('light').style.display = 'none';
             document.getElementById('fade').style.display = 'none';
         }
+
     });
 
     /* -------------------------------------------------------------------
     ******** To hide and show the navigation based on screen size *******
    ----------------------------------------------------------------------*/
-    //
+
     $(function () {
         var pull = $('#pull');
         menu = $('nav ul');
-
+        // mouseover event is more convenient for desktop version.
         $(pull).on('mouseover', function (e) {
             e.preventDefault();
             menu.slideToggle();

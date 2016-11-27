@@ -72,6 +72,7 @@
     <Content Include="Index.html" />
     <Content Include="Styles\main.css" />
     <Content Include="Styles\mediaQueries.css" />
+    <Content Include="Styles\master.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
